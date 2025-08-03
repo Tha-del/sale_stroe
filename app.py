@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import matplotlib.pyplot as plt
 
 # โหลดข้อมูล
 df = pd.read_parquet("merged_cleaned_data_small.parquet") 
@@ -327,3 +328,4 @@ if simulate:
     st.success(f"✅ ยอดขายเพิ่มขึ้น {percent_change:.2f}% จากการจำลองกลยุทธ์")
 else:
     st.info("กดปุ่ม 🚀 Simulate Strategy เพื่อดูผลกระทบจากกลยุทธ์ใหม่")
+
