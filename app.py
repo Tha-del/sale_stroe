@@ -127,13 +127,9 @@ months_order = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
 heatmap_pivot = heatmap_pivot[months_order]  # เรียง column ใหม่
 
 # แสดงตารางพร้อมการจัดสีสวยงาม
-st.dataframe(
-    heatmap_pivot.style.format("{:,.0f}").background_gradient(cmap='Blues', axis=None)
-        .set_properties(**{'text-align': 'center'})
-        .set_table_styles([{
-            'selector': 'th',
-            'props': [('text-align', 'center')]
-        }]),
+st.write(
+    heatmap_pivot.style.format("{:,.0f}").background_gradient(cmap='Blues')
+)
     use_container_width=True
 )
 import plotly.express as px
@@ -325,3 +321,4 @@ if simulate:
     st.success(f"✅ ยอดขายเพิ่มขึ้น {percent_change:.2f}% จากการจำลองกลยุทธ์")
 else:
     st.info("กดปุ่ม 🚀 Simulate Strategy เพื่อดูผลกระทบจากกลยุทธ์ใหม่")
+
